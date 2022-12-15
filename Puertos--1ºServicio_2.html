@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>1ºServicio</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>1ºServicio</h1><br/><p>En este servicio accedemos a el utilizando la ip del servidor, la cual hemos utilizado antes para hacer el nmap</p><p>Lo unico que se encuentra aqui es un nginx, pero sin nada configurado, así que para buscar mas directorios, he decidido usar gobuster para hacerle Fuzzing</p><p><span style="color:#e01b24;">gobuster dir -u 10.10.154.97 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt</span></p><p>Con este comando el primer directorio que nos encuentra es /hidden</p><p><span style="color:#e01b24;background-color:#000000;">/hidden               (Status: 301) [Size: 169] [--&gt; </span><a href="http://10.10.154.97/hidden/]">http://10.10.154.97/hidden/]</a><span style="color:#e01b24;background-color:#000000;">    </span></p><p>No ha encontrado ningun otro directorio                  </p><p>A su vez he realizado otro gobuster del directorio que me ha encontrado</p><p><span style="color:#e01b24;">gobuster dir -u 10.10.154.97/hidden -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt</span></p><p>El directorio que nos encuentra esta vez es /whatever</p><p><span style="color:#e01b24;">/whatever             (Status: 301) [Size: 169] [--&gt; </span><a href="http://10.10.154.97/hidden/whatever/]">http://10.10.154.97/hidden/whatever/]</a><span style="color:#e01b24;">     </span> </p><p>Una vez dentro de este directorio en el inspector de codigo podemos ver que hay un texto cifrado en Base64</p><p><span style="color:#e01b24;">ZmxhZ3tmMXJzN19mbDRnfQ==</span></p><p>Lo decodifico utilizando el comando base64</p><p><span style="color:#e01b24;">echo &quot;ZmxhZ3tmMXJzN19mbDRnfQ==&quot; | base64 -d &gt; 1ºFlag</span></p><p>Y veo el resultado con cat</p><p><span style="color:#e01b24;">cat 1ºFlag </span></p><p><span style="color:#e01b24;">flag{f1rs7_fl4g}</span></p><p>Aqui acaba el 1º servicio.</p></div>
+</body>
+</html>

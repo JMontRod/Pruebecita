@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>3º Servicio</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>3º Servicio</h1><br/><p>Con la contraseña obtenida en el 2º servicio podemos intentar acceder al servidor ssh de la siguiente forma</p><p><span style="color:#e01b24;">ssh boring@10.10.154.97 -p 6498</span></p><p>Al poner esto escribimos yes y ponemos la contraseña iconvertedmypasswordtobinary</p><p>A continuacion nos aparece esto</p><p><span style="color:#e01b24;">You Have 1 Minute Before AC-130 Starts Firing</span></p><p><span style="color:#e01b24;">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</span></p><p><span style="color:#e01b24;">!!!!!!!!!!!!!!!!!!I WARN YOU !!!!!!!!!!!!!!!!!!!!</span></p><p><span style="color:#e01b24;">boring@kral4-PC:~$ </span></p><p>Con esto vemos que ya estamos dentro del ssh y podemos comprobar que hay aqui haciendo un ls</p><p><span style="color:#e01b24;">boring@kral4-PC:~$ ls</span></p><p><span style="color:#e01b24;">user.txt</span></p><p>Despues le hacemos un cat para ver el contenido</p><p><span style="color:#e01b24;">boring@kral4-PC:~$ cat user.txt </span></p><p><span style="color:#e01b24;">User Flag But It Seems Wrong Like It`s Rotated Or Something</span></p><p><span style="color:#e01b24;">synt{a0jvgf33zfa0ez4y}</span></p><p>Como se puede ver la flag esta cifrada, en este caso con un ROT13 y con esta pagina lo sacamos <a href="https://brianur.info/cifrado-caesar/">https://brianur.info/cifrado-caesar/</a>, dandonos la siguiente flag</p><p><span style="color:#e01b24;">FLAG{N0WITS33MSN0RM4L}</span></p><p>Y aqui acaba por ahora esta maquinaº</p></div>
+</body>
+</html>
